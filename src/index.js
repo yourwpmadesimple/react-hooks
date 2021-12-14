@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { FaStar } from 'react-icons/fa'
 import './index.css';
 
 const App = () => {
+  const [ name, setName ] = useState("Shelly");
+
+  useEffect(() => {
+    let section = document.querySelector('section')
+    let content = "Hello World"
+    section.append(content)
+  });
+
   return (
-    <secttion>
-      <p>Congratulations</p>
-    </secttion>
+    <section>
+      <p>Congratulations { name }</p>
+      <button onClick={ () => setName("Wayne") }>Change Winner</button>
+    </section>
   )
 }
 
