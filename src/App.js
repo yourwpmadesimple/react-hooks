@@ -1,11 +1,17 @@
+import React, { useState } from 'react';
 import './App.css';
 
-function App({ name }) {
-  // console.log(props)
-  // console.log(name)
+function App() {
+  const [ checked, setChecked ] = useState(false)
+  console.log(checked)
   return (
     <div className="App">
-      <h1>Hello { name }</h1>
+      <input
+        type="checkbox"
+        value={ checked }
+        onChange={ () => setChecked((checked) => !checked) }
+      />
+      <p>{ checked ? "checked" : "not checked" }</p>
     </div>
   );
 }
