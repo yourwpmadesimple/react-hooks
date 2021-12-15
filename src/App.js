@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
-import './App.css';
+
+import Navigation from '../src/navigation/navigation';
 
 function App() {
-  const [ checked, setChecked ] = useState(false)
-  console.log(checked)
   return (
-    <div className="App">
-      <input
-        type="checkbox"
-        value={ checked }
-        onChange={ () => setChecked((checked) => !checked) }
-      />
-      <p>{ checked ? "checked" : "not checked" }</p>
+    <div>
+      <h1 className='text-center text-5xl my-4'>Bookkeeper</h1>
+      <nav
+        className="flex sm:justify-center space-x-4"
+      >
+        <Navigation />
+      </nav>
     </div>
   );
 }

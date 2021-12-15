@@ -1,30 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from 'react';
+import { render } from "react-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 
-const App = () => {
-  const [ name, setName ] = useState("Shelly");
+import './styles/index.css';
+import App from "./App";
 
-  useEffect(() => {
-    let section = document.querySelector('section')
-    let content = "Hello World"
-    section.append(content)
-  });
+import Expenses from "./routes/expenses";
+import Invoices from "./routes/invoices";
 
-  return (
-    <section>
-      <p>Congratulations { name }</p>
-      <button onClick={ () => setName("Wayne") }>Change Winner</button>
-    </section>
-  )
-}
-
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const rootElement = document.getElementById("root");
+render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={ <App /> } />
+      <Route path="expenses" element={ <Expenses /> } />
+      <Route path="invoices" element={ <Invoices /> } />
+    </Routes>
+  </BrowserRouter>,
+  rootElement
 );
 
 if (module.hot) {
