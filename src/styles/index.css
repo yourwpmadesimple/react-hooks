@@ -15,5 +15,8 @@
   h2 {
     @apply text-2xl;
   }
+  button.black{
+    @apply bg-black hover:bg-gray-900 text-white text-center py-2 px-4 rounded
+  }
   /* ... */
 }
