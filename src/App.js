@@ -1,15 +1,9 @@
-
-import Navigation from '../src/navigation/navigation';
+import React from "react";
 
 function App() {
   return (
     <div>
-      <h1 className='text-center text-5xl my-4'>Bookkeeper</h1>
-      <nav
-        className="flex sm:justify-center space-x-4"
-      >
-        <Navigation />
-      </nav>
+      <h1 className="center">Fetching Data With useEffect</h1>
     </div>
   );
 }
