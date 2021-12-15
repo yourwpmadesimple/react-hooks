@@ -22,7 +22,7 @@ function App() {
         </ul>
         <button
           className="black"
-          onClick={ () => data ? setData([]) : data }
+          onClick={ () => data ? setData([]) : setData }
         >
           Remove Data
         </button>
