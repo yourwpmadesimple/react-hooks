@@ -1,19 +1,18 @@
-import React, { useReducer } from "react";
+import React, { useState, useReducer } from "react";
 
 
 function App() {
-  const [ number, setNumber ] = useReducer((
-    number, newNumber) => number + newNumber,
-    0
-  );
+  const [ checked, setChecked ] = useState(false);
   return (
     <div>
-      <h1
-        className="center"
-        onClick={ () => setNumber(1) }
-      >
-        { number }
-      </h1>
+      <input
+        type={ `checkbox` }
+        value={ checked }
+        onClick={ () =>
+          setChecked((checked) => !checked)
+        }
+      />
+      { checked ? "checked" : "not checked" }
     </div>
   );
 }
