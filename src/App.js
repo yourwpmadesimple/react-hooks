@@ -1,31 +1,23 @@
-import React, { useState } from "react";
-
-import { useInput } from "./useInput";
+import React, { createContext } from "react";
 
 import './styles/index.css'
 
-function App() {
-  const [ titleProps, resetTitle ] = useInput("")
-  const [ colorProps, resetColor ] = useInput("#000000")
-  const submit = (e) => {
-    e.preventDefault(0);
-    alert(`${titleProps.value} sounds like ${colorProps.value}`);
-    resetTitle('');
-    resetColor('');
-  };
+export const TreesContext = createContext();
 
+export const trees = [
+  { id: 1, type: "Maple" },
+  { id: 2, type: "Oak" },
+  { id: 3, type: "Family" },
+  { id: 4, type: "Component" },
+]
+
+
+
+function App() {
 
   return (
     <div>
-      <form onSubmit={ submit }>
-        <input
-          { ...titleProps }
-          placeholder="Sound..." />
-        <input
-          { ...colorProps }
-          type="color" />
-        <button type="submit">ADD</button>
-      </form>
+      <h1>Trees I've Head of</h1>
     </div>
   );
 }

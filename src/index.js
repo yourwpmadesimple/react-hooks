@@ -3,15 +3,14 @@ import ReactDOM from 'react-dom';
 
 
 import './styles/index.css';
-import App from "./App";
+import App, { TreesContext, trees } from "./App";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <div className='container max-w-screen-lg	mx-auto px-2'>
+  <TreesContext.Provider value={ { trees } }>
+    <div className='container max-w-screen-md	mx-auto px-2'>
       <App />
     </div>
-
-  </React.StrictMode>,
+  </TreesContext.Provider>,
   document.getElementById('root')
 );
 
