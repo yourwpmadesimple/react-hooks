@@ -16,10 +16,16 @@
     @apply text-2xl;
   }
   button{
-    @apply bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded mr-2 mt-4;
+    @apply bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-4 border border-gray-400 rounded ml-2 mt-4 cursor-pointer;
   }
   input.app-checkbox{
     @apply form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer;
+  }
+  form{
+    @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+  }
+  input[type='text']{
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none;
   }
   /* ... */
 }
