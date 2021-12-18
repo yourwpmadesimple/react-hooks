@@ -1,16 +1,18 @@
-import React, { useState, useReducer } from "react";
-
+import React, { useReducer } from "react";
+import './styles/index.css'
 
 function App() {
-  const [ checked, setChecked ] = useState(false);
+  const [ checked, toggle ] = useReducer(
+    (checked) => !checked,
+    false
+  );
   return (
     <div>
       <input
-        type={ `checkbox` }
+        className="app-checkbox"
+        type="checkbox"
         value={ checked }
-        onClick={ () =>
-          setChecked((checked) => !checked)
-        }
+        onClick={ toggle }
       />
       { checked ? "checked" : "not checked" }
     </div>
