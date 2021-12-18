@@ -1,8 +1,11 @@
+// tailwind.config.js
 module.exports = {
   content: [
     "./src/**/*.{js,jsx}",
   ],
   mode: "jit",
+  future: {},
+  purge: [],
   theme: {
     extend: {},
     listStyleTypes: {
@@ -13,5 +16,11 @@ module.exports = {
       roman: 'upper-roman'
     },
   },
-  plugins: [],
+  variants: {},
+  plugins: [
+    // ...
+    require('tailwindcss'),
+    require('autoprefixer')
+    // ...
+  ]
 }
