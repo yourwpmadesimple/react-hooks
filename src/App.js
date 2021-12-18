@@ -1,15 +1,17 @@
 import React, { useState } from "react";
+
+import { useInput } from "./useInput";
+
 import './styles/index.css'
 
 function App() {
-  const [ sound, setSound ] = useState("");
-  const [ color, setColor ] = useState("");
-
+  const [ titleProps, resetTitle ] = useInput("")
+  const [ colorProps, resetColor ] = useInput("#000000")
   const submit = (e) => {
     e.preventDefault(0);
-    alert(`${sound} sounds like ${color}`);
-    setSound('');
-    setColor('');
+    alert(`${titleProps.value} sounds like ${colorProps.value}`);
+    resetTitle('');
+    resetColor('');
   };
 
 
@@ -17,12 +19,10 @@ function App() {
     <div>
       <form onSubmit={ submit }>
         <input
-          onChange={ (e) => setSound(e.target.value) }
-          value={ sound } type="text"
+          { ...titleProps }
           placeholder="Sound..." />
         <input
-          onChange={ (e) => setColor(e.target.value) }
-          value={ color }
+          { ...colorProps }
           type="color" />
         <button type="submit">ADD</button>
       </form>
